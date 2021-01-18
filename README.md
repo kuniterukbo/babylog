@@ -1,5 +1,5 @@
 # アプリケーション名
-BebyLog
+BabyLog
 
 # アプリケーション概要
 子供の写真を家族、親族内で共有できることに特化した写真投稿アプリ。
@@ -63,7 +63,7 @@ BebyLog
 | baby_name     | string     | null: false                    |
 | gender_id     | integer    | null: false                    |
 | birthday      | date       | null: false                    |
-| user          | references | null: false, foreign_key: true |
+| image         |            | (ActiveStorage)                |
 
 ### Association
 
@@ -91,7 +91,7 @@ BebyLog
 | --------- | ---------- | ------------------------------ |
 | user      | references | null: false, foreign_key: true |
 | room      | references | null: false, foreign_key: true |
-| image     | references | (ActiveStorage)                |
+| image     |            | (ActiveStorage)                |
 
 ### Association
 
