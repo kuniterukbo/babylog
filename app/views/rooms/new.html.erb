@@ -2,13 +2,13 @@
 
 <%= form_with model: @room, local: true do |f|%>
   <div>
-    <%= f.label :赤ちゃんの名前 %>
-    <%= f.text_field :babyname, placeholder: 'ルーム名を入力してください'%>
+    <%= f.label :お子様のお名前 %>
+    <%= f.text_field :babyname, placeholder: 'お子様のお名前'%>
   </div>
 
   <div>
     <%= f.label :性別 %>
-    <%= f.text_field :babyname, placeholder: 'ルーム名を入力してください'%>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {})%>
   </div>
 
   <div class="input-birth-wrap">
@@ -25,4 +25,6 @@
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
   </div>
+
+  <%= f.submit "完了" %>
 <% end %>
