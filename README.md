@@ -87,11 +87,12 @@ BabyLog
 
 ## posts テーブル
 
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| user      | references | null: false, foreign_key: true |
-| room      | references | null: false, foreign_key: true |
-| image     |            | (ActiveStorage)                |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| room          | references | null: false, foreign_key: true |
+| event_id      | integer    | null: false, foreign_key: true |
+| shooting_date | date       | null: false, foreign_key: true |
+| image         |            | (ActiveStorage)                |
 
 ### Association
 

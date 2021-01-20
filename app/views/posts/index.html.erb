@@ -1,0 +1,14 @@
+<%= render "shared/header" %>
+
+<%= link_to "写真を投稿する", new_room_post_path %>
+
+<P> <%= @room.babyname %>のアルバム </p>
+
+<%@posts.each do |post|%>
+  <%# <%= link_to room_posts_path(room.id) do%> 
+  <%if @room.id == post.room_id%>
+    <div>
+      <%=image_tag post.image.variant(resize: '300x300')%>
+    </div>
+  <% end %>
+<%end%>
