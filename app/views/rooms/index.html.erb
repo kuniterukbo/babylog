@@ -1,3 +1,14 @@
 <%= render "shared/header" %>
 
 <%= link_to "ルームを作成する", new_room_path %>
+
+<div>
+  <%current_user.rooms.each do |room|%>
+    <%=room.babyname%>
+    <div>
+      <%if room.image.attached?%>
+        <%= image_tag room.image.variant(resize: '100x100')%>
+      <%end%>
+    </div>
+  <%end%>
+</div>

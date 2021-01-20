@@ -6,4 +6,5 @@ class Room < ApplicationRecord
   has_one_attached :image
 
   validates :gender_id, numericality: { other_than: 1 } 
+  validates :name, presence: true
 end
