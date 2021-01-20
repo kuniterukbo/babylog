@@ -1,3 +1,13 @@
 <%= render "shared/header" %>
 
 <%= link_to "写真を投稿する", new_room_post_path %>
+
+<%.rooms.each do |room|%>
+  <%= link_to room_posts_path(room.id) do%>
+    <%=room.babyname%>
+    <div>
+      <%if room.image.attached?%>
+        <%= image_tag room.image.variant(resize: '100x100')%>
+      <%end%>
+    </div>
+<%end%>

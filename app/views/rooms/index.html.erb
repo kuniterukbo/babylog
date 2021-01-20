@@ -2,16 +2,17 @@
 
 <%= link_to "ルームを作成する", new_room_path %>
 
-<div>
-  <%current_user.rooms.each do |room|%>
-    <%= link_to room_posts_path(room.id) do%>
-      <%=room.babyname%>
-      <div>
-        <%if room.image.attached?%>
-          <%= image_tag room.image.variant(resize: '100x100')%>
-        <%end%>
-      </div>
+<%if user_signed_in?%>
+  <div>
+    <%current_user.rooms.each do |room|%>
+      <%= link_to room_posts_path(room.id) do%>
+        <%=room.babyname%>
+        <div>
+          <%if room.image.attached?%>
+            <%= image_tag room.image.variant(resize: '100x100')%>
+          <%end%>
+        </div>
+      <%end%>
     <%end%>
-  <%end%>
-  
-</div>
+  </div>
+<%end%>
