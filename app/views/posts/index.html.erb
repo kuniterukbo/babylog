@@ -2,12 +2,13 @@
 
 <%= link_to "写真を投稿する", new_room_post_path %>
 
-<%.rooms.each do |room|%>
-  <%= link_to room_posts_path(room.id) do%>
-    <%=room.babyname%>
+<P> <%= @room.babyname %>のアルバム </p>
+
+<%@posts.each do |post|%>
+  <%# <%= link_to room_posts_path(room.id) do%> 
+  <%if @room.id == post.room_id%>
     <div>
-      <%if room.image.attached?%>
-        <%= image_tag room.image.variant(resize: '100x100')%>
-      <%end%>
+      <%=image_tag post.image.variant(resize: '300x300')%>
     </div>
+  <% end %>
 <%end%>
