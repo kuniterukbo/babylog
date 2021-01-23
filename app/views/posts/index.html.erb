@@ -7,8 +7,10 @@
 <%@posts.each do |post|%>
   <%# <%= link_to room_posts_path(room.id) do%> 
   <%if @room.id == post.room_id%>
-    <div>
-      <%=image_tag post.image.variant(resize: '300x300')%>
+    <div class="post-images">
+      <%= link_to room_post_path(@room.id, post.id) do%>
+        <%=image_tag post.image.variant(resize: '300x300')%>
+      <% end %>
     </div>
   <% end %>
 <%end%>

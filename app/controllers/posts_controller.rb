@@ -21,6 +21,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @room = Room.find(params[:room_id])
+    @post = Post.find(params[:id])
+  end
+
   private
   def post_params
     room = Room.find(params[:room_id])
