@@ -1,15 +1,17 @@
 <%= render "shared/header" %>
-
-<%= link_to "ルームを作成する", new_room_path %>
-
+<div>
+  <%= link_to "ルームを作成する", new_room_path %>
+</div>
 <%if user_signed_in?%>
   <div>
     <%current_user.rooms.each do |room|%>
       <%= link_to room_posts_path(room.id) do%>
-        <%=room.babyname%>
-        <div>
+        <div class="room">
+          <%=room.babyname%>
           <%if room.image.attached?%>
-            <%= image_tag room.image.variant(resize: '100x100')%>
+            <div>
+              <%= image_tag room.image.variant(resize: '100x100')%>
+            </div>
           <%end%>
         </div>
       <%end%>

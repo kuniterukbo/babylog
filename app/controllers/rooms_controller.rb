@@ -18,7 +18,7 @@ class RoomsController < ApplicationController
 
   private
   def room_params
-    params.require(:room).permit(:babyname, :gender_id, :birthday, :image,user_ids: [])
+    params.require(:room).permit(:babyname, :gender_id, :birthday, :image, user_ids: [])
   end
 
 
