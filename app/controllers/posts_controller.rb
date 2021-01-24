@@ -28,6 +28,12 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to room_posts_path(params[:room_id])
+  end
+
   private
   def post_params
     room = Room.find(params[:room_id])

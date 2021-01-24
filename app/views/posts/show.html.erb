@@ -3,6 +3,15 @@
 <%= image_tag @post.image.variant(resize: '500x500') %>
 
 <div>
+  <%= link_to "アルバムに戻る", room_posts_path(@room) %>
+</div>
+  <% if current_user.id == @post.user_id %>
+    <%= link_to "投稿を削除する", room_post_path(@room, @post), method: :delete %>
+  <% end %>
+
+
+
+<div>
   <% if user_signed_in? %>
         <%= form_with(model: [@room, @post, @comment], local: true) do |f| %>
           <%= f.text_area :text, placeholder: "コメントする", rows: "3" %>
