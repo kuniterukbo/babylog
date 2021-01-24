@@ -3,4 +3,5 @@ class Post < ApplicationRecord
   belongs_to :event
   belongs_to :room
   has_one_attached :image
+  has_many :comments
 end
