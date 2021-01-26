@@ -3,6 +3,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.includes(:room)
     @room = Room.find(params[:room_id])
+    @room_users = RoomUser.where(id: @room.room_users.ids)
+    # @usres = User.where(id: @room_users.user_id)
+    # @room_users.each do |room_user|
+    #   @user = User.find(id: room_user.user_id)
+    #  end
+    # @users = User.includes(:room_user)
   end
 
   def new
