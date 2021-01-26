@@ -10,6 +10,12 @@
   </div>
 <%end%>
 
+<div>
+ <% @room_users.each do |room_user| %>
+      <%= User.find(room_user.user_id).nickname %>
+   <% end %>
+</div>
+
 <P> <%= @room.babyname %>のアルバム </p>
 
 <%@posts.each do |post|%>
