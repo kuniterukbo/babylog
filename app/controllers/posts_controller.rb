@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.includes(:room)
     @room = Room.find(params[:room_id])
-    # @posts = @room.post.all
   end
 
   def new

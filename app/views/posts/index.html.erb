@@ -1,6 +1,14 @@
 <%= render "shared/header" %>
 
-<%= link_to "写真を投稿する", new_room_post_path %>
+<div>
+  <%= link_to "写真を投稿する", new_room_post_path %>
+</div>
+
+<% if current_user.id == @room.user_id%>
+  <div>
+    <%= link_to "このルームを削除する", room_path(@room), method: :delete %>
+  </div>
+<%end%>
 
 <P> <%= @room.babyname %>のアルバム </p>
 

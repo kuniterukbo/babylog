@@ -16,9 +16,19 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    room = Room.find(params[:id])
+    room_users = RoomUser.where(id: room.room_users.ids)
+    room_users.each do |room_user|
+      room_user.destroy
+    end
+    room.destroy
+    redirect_to root_path
+  end
+
   private
   def room_params
-    params.require(:room).permit(:babyname, :gender_id, :birthday, :image, user_ids: [])
+    params.require(:room).permit(:babyname, :gender_id, :birthday, :image, user_ids: []).merge(user_id: current_user.id)
   end
 
 
