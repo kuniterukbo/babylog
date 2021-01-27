@@ -31,36 +31,35 @@ display: inline-block;
 .first-top-page-list {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
-
+// 新規登録
 .first-top-page-sign_up {
-  margin-right: 50px;
-  width: 200px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 20px;
-  background-color: rgb(26, 102, 245);
+  margin-right: 60px;
   border-radius: 10px;
-  padding: 0 auto;
 }
 
 .sign_up{
+  font-size: 20px;
   color: white;
   font-weight: bold;
-}
-
-.first-top-page-login {
-  margin-left: 50px;
-  width: 200px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 20px;
-  border: 1px solid black;
+  background-color: rgb(26, 102, 245);
+  padding: 15px 60px;
   border-radius: 10px;
 }
 
+// ログイン
+.first-top-page-login {
+  margin-left: 60px;
+  cursor: pointer;
+}
+
 .login {
+  padding: 15px 60px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 20px;
+  width: 100vw;
   color: black;
 }
