@@ -2,12 +2,65 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post-images,.room{
+body {
+background-color: rgb(247, 237, 224);
+}
+
+.title {
+  font-size: 40px;
+  color: rgb(250, 142, 19);
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.post-images,.room {
 display: inline-block;
 }
 
-.room{
+.room {
   width: 75px;
   height: 106px;
   margin-left: 30px;
+}
+
+.first-top-page {
+  text-align: center;
+  margin: 25vh;
+}
+
+.first-top-page-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+
+.first-top-page-sign_up {
+  margin-right: 50px;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  background-color: rgb(26, 102, 245);
+  border-radius: 10px;
+  padding: 0 auto;
+}
+
+.sign_up{
+  color: white;
+  font-weight: bold;
+}
+
+.first-top-page-login {
+  margin-left: 50px;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.login {
+  color: black;
 }
