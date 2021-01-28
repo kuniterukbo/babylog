@@ -46,8 +46,7 @@ background-color: rgb(236, 208, 175);
 }
 
 .create_post_submit{
-  margin-top: 20px;
-  margin-left: -37vw;
+  margin: 20px 0 20px -37vw;
   text-align: center;
 }
 
@@ -85,7 +84,6 @@ background-color: rgb(236, 208, 175);
 
 .comment_text, .post_delete{
   margin-top: 20px;
-
 }
 
 .comment_user{
@@ -93,3 +91,6 @@ background-color: rgb(236, 208, 175);
   font-weight: bold;
 }
 
+.post_delete_btn{
+  color: rgb(105, 104, 104);
+}

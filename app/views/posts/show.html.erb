@@ -29,7 +29,7 @@
   </div>
   <div class="post_delete">
     <% if current_user.id == @post.user_id %>
-      <%= link_to "投稿を削除する", room_post_path(@room, @post), method: :delete %>
+      <%= link_to "投稿を削除する", room_post_path(@room, @post), class: "post_delete_btn", method: :delete %>
     <% end %>
   </div>
 </div>
