@@ -26,7 +26,7 @@ header{
 }
 
 .log_out{
-  border: 1px solid  rgb(137, 139, 137);
+  border: 2px solid  rgb(137, 139, 137);
   padding: 5px;
   border-radius: 5px;
 }

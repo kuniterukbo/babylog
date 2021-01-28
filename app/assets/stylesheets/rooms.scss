@@ -63,3 +63,33 @@ display: inline-block;
   width: 100vw;
   color: black;
 }
+
+.create_room {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.create_room_btn {
+border: 1px solid black;
+padding: 10px;
+border-radius: 10px;
+color: black;
+background-color: rgb(236, 208, 175);
+font-weight: bold;
+}
+
+.room_image{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.album_choice{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.room{
+  color: black;
+
+}
