@@ -1,7 +1,7 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.post_index{
+.post_index {
   text-align: center;
 }
 
@@ -34,4 +34,29 @@ background-color: rgb(236, 208, 175);
 .room_delete{
   margin-top: 10px;
   color: rgb(105, 104, 104);
+}
+
+.create_post{
+  margin-left: 37vw;
+  padding-top: 20px;
+}
+
+.create_post_field{
+  margin-top: 30px;
+}
+
+.create_post_submit{
+  margin-top: 20px;
+  margin-left: -37vw;
+  text-align: center;
+}
+
+.create_post_btn{
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  background-color: rgb(236, 208, 175);
+  font-weight: bold;
+  cursor: pointer;
 }

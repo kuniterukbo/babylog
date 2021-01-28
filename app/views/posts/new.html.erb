@@ -1,13 +1,14 @@
 <%= render "shared/header" %>
 
+<div class= "create_post">
 <%= form_with model: [@room,@post], local: true do |f|%>
 
-  <div>
+  <div class="create_post_field">
       <p>写真をアップロード</p>
       <%= f.file_field :image, id:"item-image" %>
   </div>
 
-  <div class="input-birth-wrap">
+  <div class="input-birth-wrap create_post_field">
     <%= f.label :撮影日 %>
      <%= raw sprintf(
                   f.date_select(
@@ -22,10 +23,13 @@
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
   </div>
 
-   <div>
+   <div class="create_post_field">
     <%= f.label :イベント %>
     <%= f.collection_select(:event_id, Event.all, :id, :name, {})%>
   </div>
   
-  <%= f.submit "完了" %>
+  <div class="create_post_submit">
+    <%= f.submit "投稿する", class: "create_post_btn" %>
+  </div>
 <% end %>
+</div>
