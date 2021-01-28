@@ -1,10 +1,12 @@
 <header>
-  <%= link_to "BabyLog", root_path %>
-  <% if signed_in? %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <%= link_to current_user.nickname, edit_user_path(current_user) %>
-  <%else%>
-    <%= link_to "新規登録", new_user_registration_path %>
-    <%= link_to "ログイン", new_user_session_path %>
-  <%end%>
+  <div class="header_title">
+    <%= link_to "BabyLog", root_path, class: "header_title" %>
+  </div>
+
+  <ul class="user_info">
+    <% if signed_in? %>
+      <li><%= link_to current_user.nickname, edit_user_path(current_user), class: "user_name" %></li>
+      <li><%= link_to "ログアウト", destroy_user_session_path, class: "log_out", method: :delete %></li>
+    <%end%>
+</ul>
 </header>
