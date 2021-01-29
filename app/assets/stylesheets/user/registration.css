@@ -1,0 +1,39 @@
+h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 15vh;
+}
+
+.registration-main {
+  text-align: center;
+}
+
+.mail_field, .password_field {
+  border-radius: 5px;
+  border: 1px solid rgb(202, 200, 200);
+}
+
+.field{
+  margin-top: 30px;
+}
+
+.login_submit {
+  border: 1px solid rgb(223, 217, 217);
+  padding: 5px 30px;
+  border-radius: 10px;
+  background-color: rgb(223, 217, 217);
+  cursor: pointer;
+  color: rgb(105, 104, 104);
+}
+
+.actions{
+  margin: 40px;
+}
+
+.back{
+  color: rgb(105, 104, 104);
+  text-align: center;
+}
+
+

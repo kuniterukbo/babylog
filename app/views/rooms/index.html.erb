@@ -1,9 +1,8 @@
-<%= render "shared/header" %>
-<div>
-  <%= link_to "ルームを作成する", new_room_path %>
-</div>
+
 <%if user_signed_in?%>
-  <div>
+  <%= render "shared/header" %>
+  <p class="album_choice">アルバム</p>
+  <div class="room_image">
     <%current_user.rooms.each do |room|%>
       <%= link_to room_posts_path(room.id) do%>
         <div class="room">
@@ -16,5 +15,18 @@
         </div>
       <%end%>
     <%end%>
+  </div>
+  <div class="create_room">
+    <%= link_to "アルバムを作る", new_room_path, class: "create_room_btn" %>
+  </div>
+<%else%>
+  <div class="first-top-page">
+      <p>
+        <%= link_to "BabyLog", root_path, class: "title" %>
+      </p>
+      <ul class="first-top-page-list">
+        <li class="first-top-page-sign_up"><%= link_to "新規登録", new_user_registration_path, class: "sign_up" %></li>
+        <li class="first-top-page-login"><%= link_to "ログイン", new_user_session_path, class: "login" %></li>
+      </ul>
   </div>
 <%end%>

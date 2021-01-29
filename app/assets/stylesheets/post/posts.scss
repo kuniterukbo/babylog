@@ -1,0 +1,96 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.post_index {
+  text-align: center;
+}
+
+.post_btn{
+  border: 1px solid black;
+padding: 10px;
+border-radius: 10px;
+color: black;
+background-color: rgb(236, 208, 175);
+}
+.post{
+  margin-top: 50px;
+}
+
+.room_member{
+  border-bottom: 1px solid rgb(202, 200, 200);
+  width: 600px;
+  margin: 30px auto 30px;
+}
+.image{
+  border: 1px solid rgb(199, 198, 198);
+  padding: 5px;
+}
+
+.album{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.room_delete{
+  margin-top: 10px;
+  color: rgb(105, 104, 104);
+}
+
+.create_post{
+  margin-left: 37vw;
+  padding-top: 20px;
+}
+
+.create_post_field{
+  margin-top: 30px;
+}
+
+.create_post_submit{
+  margin: 20px 0 20px -37vw;
+  text-align: center;
+}
+
+.create_post_btn{
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  background-color: rgb(236, 208, 175);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.post_show{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.comment_area{
+  background-color: rgb(236, 236, 236);
+  border-radius: 5px;
+  width: 300px;
+}
+
+.comment_btn,.comment_text{
+  margin-right: 200px;
+}
+
+.shooting_date{
+  border-bottom: 1px solid rgb(214, 213, 213);
+  margin: 0 auto 20px;
+  width: 400px;
+  padding-right: 170px;
+}
+
+.comment_text, .post_delete{
+  margin-top: 20px;
+}
+
+.comment_user{
+  color: rgb(95, 94, 94);
+  font-weight: bold;
+}
+
+.post_delete_btn{
+  color: rgb(105, 104, 104);
+}

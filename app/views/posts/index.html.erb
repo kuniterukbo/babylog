@@ -1,30 +1,36 @@
 <%= render "shared/header" %>
 
-<div>
-  <%= link_to "写真を投稿する", new_room_post_path %>
-</div>
-
-<% if current_user.id == @room.user_id%>
-  <div>
-    <%= link_to "このルームを削除する", room_path(@room), method: :delete %>
+<div class="post_index">
+  <div class="post">
+    <%= link_to "写真を投稿する", new_room_post_path, class: "post_btn" %>
   </div>
-<%end%>
 
-<div>
- <% @room_users.each do |room_user| %>
-      <%= User.find(room_user.user_id).nickname %>
-   <% end %>
-</div>
 
-<P> <%= @room.babyname %>のアルバム </p>
+  <div class="room_member">
+  <% @room_users.each do |room_user| %>
+        <%= User.find(room_user.user_id).nickname %>さん
+    <% end %>
+    が見てるよ
+  </div>
 
-<%@posts.each do |post|%>
-  <%# <%= link_to room_posts_path(room.id) do%> 
-  <%if @room.id == post.room_id%>
-    <div class="post-images">
-      <%= link_to room_post_path(@room.id, post.id) do%>
-        <%=image_tag post.image.variant(resize: '300x300')%>
-      <% end %>
+  <P class="album"> <%= @room.babyname %>のアルバム </p>
+
+  <%@posts.each do |post|%>
+    <%# <%= link_to room_posts_path(room.id) do%> 
+    <%if @room.id == post.room_id%>
+      <div class="post-images">
+        <%= link_to room_post_path(@room.id, post.id) do%>
+          <%=image_tag post.image.variant(resize: '300x200'),class: "image"%>
+        <% end %>
+      </div>
+    <% end %> 
+  <%end%> 
+  <% if current_user.id == @room.user_id%>
+    <div class="room_delete">
+      <%= link_to "このアルバムを削除する", room_path(@room), method: :delete, class: "room_delete" %>
     </div>
-   <% end %> 
-<%end%>
+  <%end%>
+</div>
+<div class="back">
+  <%= link_to "＜戻る", root_path, class: "back"%>
+</div>

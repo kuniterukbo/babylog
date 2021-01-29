@@ -1,0 +1,14 @@
+
+.room_create{
+  margin-left: 37vw;
+  padding-top: 20px;
+}
+
+.create_room_field{
+  margin-top: 10px;
+}
+
+.create_room_submit{
+  margin-left: -37vw;
+  text-align: center;
+}

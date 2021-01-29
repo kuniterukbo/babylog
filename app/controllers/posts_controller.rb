@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   private
   def post_params
     room = Room.find(params[:room_id])
-    params.require(:post).permit(:shooting_date, :event_id, :image).merge(room_id: room.id )
+    params.require(:post).permit(:shooting_date, :event_id, :image).merge(room_id: room.id, user_id: current_user.id )
   end
 
 end

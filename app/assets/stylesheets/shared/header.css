@@ -1,0 +1,32 @@
+header{
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 48px;
+  background-color: rgb(250, 231, 192);
+}
+
+.header_title {
+  font-size: 30px;
+  color: rgb(250, 142, 19);
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user_info{
+  display: flex;
+}
+
+.user_info>li{
+  margin: 0 20px 0 20px;
+}
+
+.log_out, .user_name {
+  color: rgb(137, 139, 137);
+  font-weight: bold;
+}
+
+.log_out{
+  border: 2px solid  rgb(137, 139, 137);
+  padding: 5px;
+  border-radius: 5px;
+}
