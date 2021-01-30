@@ -17,3 +17,7 @@
  * {
   box-sizing: border-box;
 }
+
+.error-message, .login-flash-message {
+  color: red;
+}
