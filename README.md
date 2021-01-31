@@ -6,9 +6,13 @@ BabyLog
 
 # URL
 https://babylog-32573.herokuapp.com/
-# テスト用アカウント
-・メールアドレス： aaa@aaa  
-・パスワード： aaa111
+# アカウント情報
+## Basic認証
+　ユーザーID: admin  
+　パスワード: 2222
+## テスト用アカウント
+　メールアドレス： aaa@aaa  
+　パスワード： aaa111
 
 # 開発環境  
 Ruby 2.6.5  
