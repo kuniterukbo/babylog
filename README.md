@@ -26,9 +26,11 @@ https://babylog-32573.herokuapp.com/
 
 # 実装機能についてのGIFと説明
 ## ユーザー管理機能
-<img src="0cf0fa689182cfc0ebb5c1880288fd38.gif" width="300px">  
-・deviseを使用しユーザー管理機能を取り入れました。
+<img src="0cf0fa689182cfc0ebb5c1880288fd38.gif" width="300px">
+・deviseを使用しユーザー管理機能を取り入れました。  
+
 ## トップページ
+
 # 実装予定の機能
 
 
