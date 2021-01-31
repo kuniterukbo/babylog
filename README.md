@@ -25,9 +25,10 @@ https://babylog-32573.herokuapp.com/
 　→**人物ごとのルームに分けて、そのルームに入れるユーザーを指定できる**  
 
 # 実装機能についてのGIFと説明
-![users]( 0cf0fa689182cfc0ebb5c1880288fd38.gif)
 ## ユーザー管理機能
-
+<img src="0cf0fa689182cfc0ebb5c1880288fd38.gif" width="300px">  
+・deviseを使用しユーザー管理機能を取り入れました。
+## トップページ
 # 実装予定の機能
 
 
