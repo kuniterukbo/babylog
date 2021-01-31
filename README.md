@@ -2,15 +2,24 @@
 BabyLog
 
 # アプリケーション概要
-子供の写真を家族、親族内で共有できることに特化した写真投稿アプリ。
+子供の成長を家族や親族間などで見守れる、写真共有アプリです。
 
 # URL
-
+https://babylog-32573.herokuapp.com/
 # テスト用アカウント
-
+・メールアドレス： aaa@aaa
+・パスワード： aaa111
 # 利用方法
+・WebブラウザGoogleChromeの最新版を利用してアクセスしてください。
+    ＊ただし、デプロイ等で接続できないタイミングをもざいます。その際は少しお時間をおいてから接続してください。
+・接続先、ログイン情報は上記の通りです。
+・同時に複数の方がログインしている場合に、ログインできない可能性がございます。
+・テストアカウントでログイン → トップページからから「アルバムを作る」を押下 → 情報を入力、「アルバムを作成する」押下 → ルームが作成されます。
+・作成したアルバムの写真又は、アルバム名を押下 → 投稿一覧ページから「写真を投稿する」を押下 → 写真が投稿されます。
+・投稿した写真を押下 → 詳細画面からコメントを入力し、コメントするを押下 → コメントが投稿されます。
 
 # 目指した課題解決
+
 ・LINEなどで写真を共有すると投稿数が多いとスクロールして確認したり、保存して自分でまとめないと見づらい。
 ・LINEでは機能が多くて使いづらい。
 ・文章のやりとりをメインとするツールで写真を投稿すると返信しないといけない雰囲気になる。気を遣う。
@@ -63,6 +72,7 @@ BabyLog
 | baby_name     | string     | null: false                    |
 | gender_id     | integer    | null: false                    |
 | birthday      | date       | null: false                    |
+| room_id       | integer    | null: false                    |
 | image         |            | (ActiveStorage)                |
 
 ### Association
@@ -70,6 +80,7 @@ BabyLog
 - has_many :room_users
 - has_many :rooms, through: :room_users
 - has_many :posts
+- has_many :comments
 - has_many :relationship
 
 ## room_users テーブル
@@ -91,6 +102,7 @@ BabyLog
 | ------------- | ---------- | ------------------------------ |
 | room          | references | null: false, foreign_key: true |
 | event_id      | integer    | null: false, foreign_key: true |
+| user _id      | integer    | null: false                    |
 | shooting_date | date       | null: false, foreign_key: true |
 | image         |            | (ActiveStorage)                |
 
@@ -102,17 +114,19 @@ BabyLog
 
 ## comments テーブル
 
-| Column              | Type       | Options                        |
-| ------------------- | ---------- | ------------------------------ |
-| content             | string     | null: false                    |
-| post_id             | string     | null: false, foreign_key: true |
-| user                | text       | null: false, foreign_key: true |
+| Column              | Type           | Options                        |
+| ------------------- | -------------- | ------------------------------ |
+| content             | string         | null: false                    |
+| post                | references     | null: false, foreign_key: true |
+| user                | references     | null: false, foreign_key: true |
+| room                | references     | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
 - belongs_to :post
+- belongs_to :room
 
 ## relationships テーブル
 
@@ -125,4 +139,3 @@ BabyLog
 ### Association
 
 - belongs_to :room
-- has_many :comments

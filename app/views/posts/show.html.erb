@@ -10,10 +10,10 @@
 
   <div>
     <% if user_signed_in? %>
-          <%= form_with(model: [@room, @post, @comment], local: true) do |f| %>
-            <%= f.text_area :text, placeholder: "感想", rows: "3", class: "comment_area" %><br>
-            <%= f.submit "コメントする", class: "comment_btn" %>
-          <% end %>
+      <%= form_with(model: [@room, @post, @comment], local: true) do |f| %>
+        <%= f.text_area :text, placeholder: "感想", rows: "3", class: "comment_area" %><br>
+        <%= f.submit "コメントする", class: "comment_btn" %>
+      <% end %>
     <% else %>
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>

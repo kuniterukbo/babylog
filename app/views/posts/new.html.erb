@@ -3,6 +3,8 @@
 <div class= "create_post">
 <%= form_with model: [@room,@post], local: true do |f|%>
 
+<%= render 'shared/error_messages', model: f.object %>
+
   <div class="create_post_field">
       <p>写真をアップロード</p>
       <%= f.file_field :image, id:"item-image" %>

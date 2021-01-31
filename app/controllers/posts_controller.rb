@@ -1,23 +1,17 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :unmatched_user_redirect_root_path
 
   def index
     @posts = Post.includes(:room)
-    @room = Room.find(params[:room_id])
-    @room_users = RoomUser.where(id: @room.room_users.ids)
-    # @usres = User.where(id: @room_users.user_id)
-    # @room_users.each do |room_user|
-    #   @user = User.find(id: room_user.user_id)
-    #  end
-    # @users = User.includes(:room_user)
   end
 
   def new
-    @room = Room.find(params[:room_id])
     @post = Post.new
+
   end
 
   def create
-    @room = Room.find(params[:room_id])
     @post = Post.new(post_params)
     if @post.save
       redirect_to action: :index
@@ -27,10 +21,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @room = Room.find(params[:room_id])
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+
   end
 
   def destroy
@@ -45,4 +39,15 @@ class PostsController < ApplicationController
     params.require(:post).permit(:shooting_date, :event_id, :image).merge(room_id: room.id, user_id: current_user.id )
   end
 
+  def unmatched_user_redirect_root_path
+    @room = Room.find(params[:room_id])
+    @room_users = RoomUser.where(id: @room.room_users.ids)
+    room_user_id = []
+    @room_users.each do |room_user|
+      room_user_id << room_user.user.id
+    end
+    unless room_user_id.include?(current_user.id)
+      redirect_to root_path
+    end
+  end
 end

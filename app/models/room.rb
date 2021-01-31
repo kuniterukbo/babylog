@@ -8,6 +8,13 @@ class Room < ApplicationRecord
   has_many :posts, dependent: :destroy
   
   validates :gender_id, numericality: { other_than: 1 } 
-  validates :babyname, presence: true
 
+
+  with_options presence: true do
+    validates :babyname
+    validates :gender_id
+    validates :user_id
+    validates :birthday
+    validates :image
+  end
 end
