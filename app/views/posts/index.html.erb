@@ -5,18 +5,18 @@
     <%= link_to "写真を投稿する", new_room_post_path, class: "post_btn" %>
   </div>
 
-
   <div class="room_member">
-  <% @room_users.each do |room_user| %>
+    <% @room_users.each do |room_user| %>
         <%= User.find(room_user.user_id).nickname %>さん
     <% end %>
     が見てるよ
   </div>
 
+
+
   <P class="album"> <%= @room.babyname %>のアルバム </p>
 
   <%@posts.each do |post|%>
-    <%# <%= link_to room_posts_path(room.id) do%> 
     <%if @room.id == post.room_id%>
       <div class="post-images">
         <%= link_to room_post_path(@room.id, post.id) do%>

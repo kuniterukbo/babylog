@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:room)
+    @birthday = Date.parse("#{@room.birthday.to_s}")
   end
 
   def new
