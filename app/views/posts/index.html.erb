@@ -12,7 +12,11 @@
     が見てるよ
   </div>
 
-
+  <%= form_with model: @post, url: search_room_posts_path(@room), method: :get, local: true do |f| %>
+    <%# <%= f.collection_select :shooting_date, @posts, :id, :shooting_date, :prompt => "撮影日で検索" %>
+    <%= f.select :shooting_date, @shooting_dates.uniq%>
+    <%= f.collection_select(:event_id, Event.all, :id, :name, {})%>
+  <% end %>
 
   <P class="album"> <%= @room.babyname %>のアルバム </p>
 

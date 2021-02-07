@@ -5,6 +5,13 @@ class PostsController < ApplicationController
   def index
     @posts = Post.includes(:room)
     @birthday = Date.parse("#{@room.birthday.to_s}")
+
+    @shooting_dates = []
+    @posts.each do |post|
+      if @room.id == post.room_id
+        @shooting_dates << [Date.parse("#{post.shooting_date.to_s}")]
+      end
+    end
   end
 
   def new
