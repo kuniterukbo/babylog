@@ -6,25 +6,27 @@
   </div>
 
   <div class="room_member">
+  ルームメンバー：
     <% @room_users.each do |room_user| %>
         <%= User.find(room_user.user_id).nickname %>さん
     <% end %>
-    が見てるよ
+    
   </div>
 
-  <%= form_with model: @post, url: search_room_posts_path(@room), method: :get, local: true do |f| %>
+  <%= form_with model: @post, url: search_room_posts_path(@room), method: :get, id: "search_form", local: true do |f| %>
     <%# <%= f.collection_select :shooting_date, @posts, :id, :shooting_date, :prompt => "撮影日で検索" %>
-    <%= f.select :shooting_date, @shooting_dates.uniq%>
+    <%= f.select :shooting_date, @shooting_dates.uniq, include_blank: "--", class: "shooting_dates"%>
     <%= f.collection_select(:event_id, Event.all, :id, :name, {})%>
+    <%= f.submit "検索する", id: "submit"%>
   <% end %>
 
   <P class="album"> <%= @room.babyname %>のアルバム </p>
 
   <%@posts.each do |post|%>
     <%if @room.id == post.room_id%>
-      <div class="post-images">
+      <div class="post-images" id="<%"#{post.shooting_date}"%>">
         <%= link_to room_post_path(@room.id, post.id) do%>
-          <%=image_tag post.image.variant(resize: '300x200'),class: "image"%>
+          <%=image_tag post.image.variant(resize: '300x200'),class: "image #{post.shooting_date}"%>
         <% end %>
       </div>
     <% end %> 
