@@ -21,3 +21,7 @@
 .error-message, .login-flash-message {
   color: red;
 }
+
+.none{
+  display: none;
+}

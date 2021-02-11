@@ -20,11 +20,11 @@
     <%= f.submit "検索する", id: "submit"%>
   <% end %>
 
-  <P class="album"> <%= @room.babyname %>のアルバム </p>
+  <P class="album" id="album"> <%= @room.babyname %>のアルバム </p>
 
   <%@posts.each do |post|%>
     <%if @room.id == post.room_id%>
-      <div class="post-images" id="<%"#{post.shooting_date}"%>">
+      <div class="post-image" shooting-date=<%= post.shooting_date %>>
         <%= link_to room_post_path(@room.id, post.id) do%>
           <%=image_tag post.image.variant(resize: '300x200'),class: "image #{post.shooting_date}"%>
         <% end %>
