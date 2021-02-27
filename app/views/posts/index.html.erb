@@ -24,9 +24,9 @@
 
   <%@posts.each do |post|%>
     <%if @room.id == post.room_id%>
-      <div class="post-image" shooting-date=<%= post.shooting_date %>>
+      <div class="post-images <%=post.shooting_date%>" shooting-date=<%= post.shooting_date%> id=<%= post.id%>>
         <%= link_to room_post_path(@room.id, post.id) do%>
-          <%=image_tag post.image.variant(resize: '300x200'),class: "image #{post.shooting_date}"%>
+          <%=image_tag post.image.variant(resize: '300x200'),class: "image"%>
         <% end %>
       </div>
     <% end %> 
@@ -40,3 +40,5 @@
 <div class="back">
   <%= link_to "＜戻る", root_path, class: "back"%>
 </div>
+
+<p id="test">aaaa</p>
