@@ -4,6 +4,17 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:room)
+    @birthday = Date.parse("#{@room.birthday.to_s}")
+
+    @shooting_dates = []
+    @posts.each do |post|
+      if @room.id == post.room_id
+        @shooting_dates << [Date.parse("#{post.shooting_date.to_s}")]
+      end
+    end
+
+    
+
   end
 
   def new
@@ -31,6 +42,20 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     redirect_to room_posts_path(params[:room_id])
+  end
+
+  def post_search
+    @posts = Post.includes(:room)
+    @birthday = Date.parse("#{@room.birthday.to_s}")
+
+    @shooting_dates = []
+    @posts.each do |post|
+      if @room.id == post.room_id
+        @shooting_dates << [Date.parse("#{post.shooting_date.to_s}")]
+      end
+    end
+
+    render json: {post_shooting_date: @shooting_dates}
   end
 
   private

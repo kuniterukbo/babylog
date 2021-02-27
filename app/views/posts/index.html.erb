@@ -5,20 +5,26 @@
     <%= link_to "写真を投稿する", new_room_post_path, class: "post_btn" %>
   </div>
 
-
   <div class="room_member">
-  <% @room_users.each do |room_user| %>
+  ルームメンバー：
+    <% @room_users.each do |room_user| %>
         <%= User.find(room_user.user_id).nickname %>さん
     <% end %>
-    が見てるよ
+    
   </div>
 
-  <P class="album"> <%= @room.babyname %>のアルバム </p>
+  <%= form_with model: @post, url: search_room_posts_path(@room), method: :get, id: "search_form", local: true do |f| %>
+    <%# <%= f.collection_select :shooting_date, @posts, :id, :shooting_date, :prompt => "撮影日で検索" %>
+    <%= f.select :shooting_date, @shooting_dates.uniq, include_blank: "--", class: "shooting_dates"%>
+    <%= f.collection_select(:event_id, Event.all, :id, :name, {})%>
+    <%= f.submit "検索する", id: "submit"%>
+  <% end %>
+
+  <P class="album" id="album"> <%= @room.babyname %>のアルバム </p>
 
   <%@posts.each do |post|%>
-    <%# <%= link_to room_posts_path(room.id) do%> 
     <%if @room.id == post.room_id%>
-      <div class="post-images">
+      <div class="post-images <%=post.shooting_date%>" shooting-date=<%= post.shooting_date%> id=<%= post.id%>>
         <%= link_to room_post_path(@room.id, post.id) do%>
           <%=image_tag post.image.variant(resize: '300x200'),class: "image"%>
         <% end %>
@@ -34,3 +40,5 @@
 <div class="back">
   <%= link_to "＜戻る", root_path, class: "back"%>
 </div>
+
+<p id="test">aaaa</p>
