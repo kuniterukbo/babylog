@@ -1,8 +1,13 @@
 function post() {
-  const $shooting_date = $("shooting_date")
-  const $test = $("#test");
-  console.log($test.value);
-  $test.text("bbb");
+  const $shooting_date = $("#shooting_date");
+  
+  
+  $shooting_date.on("change",function() {
+    const $post_images = $(".post-images")
+    $post_images.hide();
+    $(`.${$shooting_date.val()}`).show();
+  });
 }
+
 
 window.addEventListener("DOMContentLoaded", post);
