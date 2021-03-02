@@ -14,10 +14,10 @@
   </div>
 
   <%= form_with model: @post, url: search_room_posts_path(@room), method: :get, id: "search_form", local: true do |f| %>
-    <%# <%= f.collection_select :shooting_date, @posts, :id, :shooting_date, :prompt => "撮影日で検索" %>
+ 
     <%= f.select :shooting_date, @shooting_dates.uniq, include_blank: "--", class: "shooting_dates"%>
-    <%= f.collection_select(:event_id, Event.all, :id, :name, {})%>
-    <%= f.submit "検索する", id: "submit"%>
+    <%= f.collection_select(:event_id, @event, :id, :name, {})%>
+    
   <% end %>
 
   <P class="album" id="album"> <%= @room.babyname %>のアルバム </p>

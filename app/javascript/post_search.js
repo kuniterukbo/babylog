@@ -1,5 +1,6 @@
 function post() {
   const $shooting_date = $("#shooting_date");
+
   
   
   $shooting_date.on("change",function() {
