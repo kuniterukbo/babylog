@@ -7,19 +7,22 @@ class PostsController < ApplicationController
     @birthday = Date.parse("#{@room.birthday.to_s}")
 
     @shooting_dates = []
+    event_ids = []
     @posts.each do |post|
       if @room.id == post.room_id
         @shooting_dates << [Date.parse("#{post.shooting_date.to_s}")]
+        event_ids << post.event_id
       end
     end
 
+
+    @event = Event.find(event_ids.uniq)
     
 
   end
 
   def new
     @post = Post.new
-
   end
 
   def create
@@ -75,4 +78,5 @@ class PostsController < ApplicationController
       redirect_to root_path
     end
   end
+
 end
