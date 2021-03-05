@@ -14,11 +14,7 @@ class PostsController < ApplicationController
         event_ids << post.event_id
       end
     end
-
-
     @event = Event.find(event_ids.uniq)
-    
-
   end
 
   def new
