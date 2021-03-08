@@ -24,7 +24,7 @@
 
   <%@posts.each do |post|%>
     <%if @room.id == post.room_id%>
-      <div class="post-images <%=post.shooting_date%>" shooting-date=<%= post.shooting_date%> id=<%= post.id%>>
+      <div class="post-images <%=post.shooting_date%> <%=post.event_id%>" shooting-date=<%= post.shooting_date%> id=<%= post.id%>>
         <%= link_to room_post_path(@room.id, post.id) do%>
           <%=image_tag post.image.variant(resize: '300x200'),class: "image"%>
         <% end %>
