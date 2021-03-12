@@ -17,8 +17,8 @@
  
     <%= f.select :shooting_date, @shooting_dates.uniq, include_blank: "--", class: "shooting_dates"%>
     <%= f.collection_select(:event_id, @event, :id, :name, {})%>
-    
   <% end %>
+    <button id="all_show_btn">全て表示</button>
 
   <P class="album" id="album"> <%= @room.babyname %>のアルバム </p>
 
