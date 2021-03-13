@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @birthday = Date.parse("#{@room.birthday.to_s}")
 
     @shooting_dates = []
-    event_ids = []
+    event_ids = [1]
     @posts.each do |post|
       if @room.id == post.room_id
         @shooting_dates << [Date.parse("#{post.shooting_date.to_s}")]
@@ -15,7 +15,6 @@ class PostsController < ApplicationController
       end
     end
     @event = Event.find(event_ids.uniq)
-    
   end
 
   def new
