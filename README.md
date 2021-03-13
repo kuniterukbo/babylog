@@ -17,9 +17,9 @@ https://babylog-32573.herokuapp.com/
 # 開発環境  
 Ruby 2.6.5  
 Ruby on Rails  6.0.3.4  
-JavaScript　　
-jQuery　3.5.1　　
-MySQL2 5.6.21  
+JavaScript  
+jQuery　3.5.1  
+MySQL2 5.6.21   
 Github  
 VSCode
 
