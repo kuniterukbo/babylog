@@ -30,6 +30,8 @@ window.addEventListener("turbolinks:load", () =>{
   $all_show_btn.on("click", function(){
     $all_show_btn.hide();
     $post_images.show();
+    $shooting_date.val("");
+    $event.val(1);
   });
 //  -------------------------------------
 
