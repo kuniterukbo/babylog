@@ -14,11 +14,18 @@
   </div>
 
   <%= form_with model: @post, url: search_room_posts_path(@room), method: :get, id: "search_form", local: true do |f| %>
- 
-    <%= f.select :shooting_date, @shooting_dates.uniq, include_blank: "--", class: "shooting_dates"%>
-    <%= f.collection_select(:event_id, @event, :id, :name, {})%>
+    <div class="search_field">
+      <div class="date">
+        <p>日付を選択</p>
+        <%= f.select :shooting_date, @shooting_dates.uniq, include_blank: "--", class: "shooting_dates"%>
+      </div>
+      <div>
+        <p>イベントを選択</p>
+        <%= f.collection_select(:event_id, @event, :id, :name, {})%>
+      </div>
+    </div>
   <% end %>
-    <button id="all_show_btn">全て表示</button>
+  <button id="all_show_btn">全て表示</button>
 
   <P class="album" id="album"> <%= @room.babyname %>のアルバム </p>
 
